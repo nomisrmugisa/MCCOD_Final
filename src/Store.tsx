@@ -756,7 +756,8 @@ class Store {
 		}
 
 		if(!!this.lsdata["nationality"]) {
-			const nId = this.nationalitySelect?.find(n => n.name === this.lsdata["nationality"])?.id
+			console.log("nationSel", this.nationalitySelect);
+			const nId = this.nationalitySelect?.find(n => this.lsdata["nationality"].toLowerCase().includes(n.shortName.toLowerCase()))?.id
 			console.log("setting nat", nId);
 			if (!!nId)
 				this.selectedNationality = nId;
